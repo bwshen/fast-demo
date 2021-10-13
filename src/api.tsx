@@ -8,7 +8,7 @@ export class API {
 
 
   constructor(apiKey: string) {
-    const config = new Configuration({apiKey});
+    const config = new Configuration({apiKey, basePath: "//omdbapi.com"});
     this._titleAPI = new TitleParameterApi(config);
     this._searchAPI = new SearchParameterApi(config);
     this._IDAPI = new IDParameterApi(config);
