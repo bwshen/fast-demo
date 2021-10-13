@@ -36,14 +36,12 @@ export default class CardsList extends React.Component<{
     this.props.API.getId(imdbID).then(results => {
       // Add in error handling later
       if (results?.data?.Response !== 'True') return;
-      console.log({key: results.data.imdbID, ...results.data});
       this.setState({cards: {type: CardType.SingleFull, results: [results.data]}});
     })
   }
 
   search(term: string) {
     const page = this.props.movies?.page;
-    console.log(page);
     this.props.API.search(term, page).then((function(results){
       if (this.props.movies?.type !== CardType.ListShort || term !== this.props.movies?.id || !results.data?.Search || page != this.props.movies?.page) return;
       this.setState({cards: {type: CardType.ListShort, results: results.data?.Search}});

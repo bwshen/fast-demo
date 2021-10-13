@@ -44,7 +44,7 @@ export class PlayListManager {
         try {
           this._listeners[symbol](playListItems);
         } catch (e){
-          console.log('wtf', e);
+
         }
     });
   }

@@ -51,7 +51,6 @@ export class BaseAPI {
 
     constructor(configuration?: Configuration, protected basePath: string = BASE_PATH, protected axios: AxiosInstance = globalAxios) {
         if (configuration) {
-            console.log(configuration);
             this.configuration = configuration;
             this.basePath = configuration.basePath || this.basePath;
         }
